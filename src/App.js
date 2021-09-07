@@ -1,6 +1,7 @@
-import Topbar from './components/navbars/Topbar'
-import Sidebar from './components/sidebar/Sidebar'
-import "./app.css"
+import Topbar from './components/navbars/Topbar';
+import Sidebar from './components/sidebar/Sidebar';
+import Home from './Pages/Home';
+import "./app.css";
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
      <Topbar />
      <div className="container">
       <Sidebar />
-     <div className="others">Unknown .......</div>
+      <Home />
      </div>
     </div>
   );
