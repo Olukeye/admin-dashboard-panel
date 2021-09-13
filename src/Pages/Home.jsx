@@ -1,8 +1,8 @@
 import React from 'react'
 import FeaturedUpdate from '../components/features/FeaturedUpdate';
 import Chart from '../components/ReadChart/Chart';
-import WidgetLg from '../components/widgetLG/WidgetLg';
-import WidgetSm  from '../components/widgetSM/WidgetSm';
+import WidgetLeft from '../components/widgetLeft/WidgetLeft';
+import WidgetRight  from '../components/widgetRight/WidgetRight';
 import userData from '../graphData';
 import './home.css'
 
@@ -10,17 +10,16 @@ import './home.css'
  const Home = () => {
     return (
         <div className="home">
-            <FeaturedUpdate />
-
+            <div className="homeWidgets">
+                 <WidgetRight />
+                 <WidgetLeft />
+             </div>
             <Chart 
                 data={ userData} 
                 title="User Statistics" 
                 grid dataKey="Active User"
              />
-             <div className="homeWidgets">
-                 <WidgetSm />
-                 <WidgetLg />
-             </div>
+             <FeaturedUpdate />
         </div>
     )
 }
