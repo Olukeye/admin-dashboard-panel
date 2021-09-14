@@ -10,3 +10,48 @@
     font-size: 20px;
     font-weight: 700;
 }
+
+.widgetLeftTable {
+    width: 100%;
+    border-spacing: 20px;
+}
+
+.widgetLeftTh{
+    text-align: left;
+}
+.widgetLeftUser {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.widgetLeftImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.widgetLeftDate, .widgetLeftAmount {
+    font-weight: 200;
+}
+
+.widgetButton  {
+    padding: 5px 7px;
+    border: none;
+    border-radius: 6px;
+}
+
+.widgetButton.Approved {
+background-color: cadetblue;
+color: maroon;
+}
+.widgetButton.pending {
+background-color: rgb(226, 241, 241);
+color: grey;
+}
+.widgetButton.Declined {
+background-color: rgb(218, 202, 196);
+color: royalblue;
+}
