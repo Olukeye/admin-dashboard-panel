@@ -1,0 +1,10 @@
+.edituser {
+    flex: 4;
+    padding: 25px;
+}
+
+.userTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
