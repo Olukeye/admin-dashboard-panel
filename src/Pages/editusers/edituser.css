@@ -2,9 +2,139 @@
     flex: 4;
     padding: 25px;
 }
-
+.userTitle{
+    font-weight: 500;
+    font-size: 30px;
+    color: #896;
+}
 .userTitleContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.addButton {
+    width: 80px;
+    border: none;
+    padding:4px;
+    background-color: mediumpurple;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+.userContainer {
+    display: flex;
+    margin-top: 25px;
+}
+.displayUser{
+    flex: 1;
+    padding: 20px;
+    box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+}
+.updateUser {
+    flex: 3;
+    padding: 20px;
+    margin-left: 20px;
+    box-shadow: 5px 5px 15px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+}
+.displayTop {
+    display:flex;
+    align-items: center;
+}
+.dispalyImg{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.displayTopTitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22px;
+}
+.diaplayTopUsername {
+    font-weight: 800;
+}
+.diaplayTopUserTitle {
+    font-weight: 300;
+}
+.displayBottom {
+    margin-top: 20px;
+}
+.displayBmTitle {
+ font-size: 15px;
+ font-weight: 700;
+ color: #896;
+}
+.displayBmInfo{
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+    color: #657;
+}
+.displayBmIcon {
+   font-size: 16px !important;
+}
+.displayInfoTitle {
+    margin-left: 8px;
+}
+/* .updateUser {
+
+} */
+.updateUserTitle {
+    font-size: 25px;
+    font-weight: 700;
+    color: #896;
+}
+.updateUserForm{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+}
+/* .updateUserLeft {
+
+} */
+.updateUserItem {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.updateUserItem > label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.updateUserInput {
+    border: none;
+    width: 250px;
+    height: 25px;
+    border-bottom: 1px solid #896;
+}
+.updateUserRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.updateUserImg {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.updateUserUpload{
+    display: flex;
+    align-items: center;
+}
+#file {
+    display: none;
+    cursor: pointer;
+}
+.updateUserBtn {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color:#170055 ;
+    color: #896;
 }

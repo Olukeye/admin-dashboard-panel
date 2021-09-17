@@ -1,7 +1,7 @@
 .topbar {
     width: 100%;
     height: 50px;
-    background-color: wheat;
+    background-color: #170055;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -18,7 +18,7 @@
 .logo {
     font-weight: bold;
     font-size: 20px;
-    color: darkblue;
+    color: #B5FFD9;
     cursor: pointer;
 }
 
@@ -27,7 +27,7 @@
     align-items: center;
     cursor: pointer;
     margin-right: 10px;
-    color: #333;
+    color: #B5FFD9;
 }
 
 .iconContainer{
@@ -42,7 +42,7 @@
     position: absolute;
     top: -4px;
     right: 0px;
-    background-color: red;
+    background-color: #AE00FB;
     color: white;
     border-radius: 50px;
     display: flex;
