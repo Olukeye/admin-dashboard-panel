@@ -5,6 +5,8 @@ import "./app.css";
 import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {Users } from './Pages/usersPage/Users';
 import  EditUser  from './Pages/editusers/EditUser';
+import  CreateUser  from './Pages/newuser/CreateUser';
+
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
         </Route>
         <Route path="/user/:userId" >
           <EditUser />
+        </Route>
+        <Route path="/createuser" >
+          <CreateUser />
         </Route>
       </Switch>
      </div>

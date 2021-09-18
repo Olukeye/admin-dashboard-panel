@@ -12,6 +12,7 @@ import {
     Storefront,
     Timeline, TrendingUp, WorkOutline
     } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 
 
 
@@ -22,9 +23,11 @@ import {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboatd</h3>
                     <ul className="sidebarList">
+                        <Link to="/">
                         <li className="sidebarListItem active"> 
                         <LineStyle  className="sidebarIcon"/> Home
                         </li>
+                        </Link>
                         <li className="sidebarListItem"> 
                         <Timeline className="sidebarIcon" /> Analytics
                         </li>
@@ -36,9 +39,11 @@ import {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Quick Menu</h3>
                     <ul className="sidebarList">
-                        <li className="sidebarListItem"> 
+                       <Link to="/users">
+                       <li className="sidebarListItem"> 
                         <GroupOutlined  className="sidebarIcon"/> Users
-                        </li>
+                      </li>
+                       </Link>
                         <li className="sidebarListItem"> 
                         <Storefront  className="sidebarIcon"/> Products
                         </li>

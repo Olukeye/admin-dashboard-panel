@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
         <div className="edituser">
           <div className="userTitleContainer">
               <hi className="userTitle">Edit</hi>
-             <Link to="/adduser">
+             <Link to="/createuser">
               <button className="addButton">Create</button>
              </Link>
           </div>
