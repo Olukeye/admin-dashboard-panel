@@ -109,4 +109,48 @@ const userData = [
     
 ]
 
+export const productRows = [
+  {
+      id:1,
+      username:'Power bank',
+      img:"",
+      stock: 375,
+      status: " active",
+      price: "$643.21"
+  },
+  {
+      id:2,
+      username:'Power bank',
+      img:"",
+      stock: 456,
+      status: " active",
+      price: "$343.21"
+  },
+  {
+      id:3,
+      username:'Power bank',
+      img:"",
+      stock: 336,
+      status: " active",
+      price: " $143.21"
+  },
+  {
+      id:4,
+      username:'Power bank',
+      img:"",
+      stock: 645,
+      status: " active",
+      price: "$233.21"
+  },
+  {
+      id:5,
+      username:'Power bank',
+      img:"",
+      stock: 456,
+      status: " active",
+      price: "$473.21"
+  },
+  
+]
+
   export default userData;

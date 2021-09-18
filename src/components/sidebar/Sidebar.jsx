@@ -23,7 +23,7 @@ import { Link } from 'react-router-dom'
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboatd</h3>
                     <ul className="sidebarList">
-                        <Link to="/">
+                        <Link to="/"  className="links">
                         <li className="sidebarListItem active"> 
                         <LineStyle  className="sidebarIcon"/> Home
                         </li>
@@ -39,14 +39,16 @@ import { Link } from 'react-router-dom'
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Quick Menu</h3>
                     <ul className="sidebarList">
-                       <Link to="/users">
+                       <Link to="/users" className="links">
                        <li className="sidebarListItem"> 
                         <GroupOutlined  className="sidebarIcon"/> Users
                       </li>
                        </Link>
-                        <li className="sidebarListItem"> 
+                       <Link to="/product"  className="links">
+                       <li className="sidebarListItem"> 
                         <Storefront  className="sidebarIcon"/> Products
                         </li>
+                       </Link>
                         <li className="sidebarListItem"> 
                         <AttachMoneyOutlined className="sidebarIcon" /> Transactions
                         </li>

@@ -1,5 +1,6 @@
 .createuser {
     flex: 4;
+    padding: 2px;
 }
 .newUserForm {
     display:flex ;
@@ -35,4 +36,15 @@
 .userSelect {
     height: 40px;
     border-radius: 5px;
+}
+.newUserBtn {
+    width: 200px;
+    border: none;
+    background-color:#170055;
+    color: #896;
+    padding: 7px 10px;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 30px;
+    cursor: pointer;
 }

@@ -1,0 +1,30 @@
+.product{
+    flex: 4;
+}
+.productList {
+    display: flex;
+    align-items: center;
+}
+
+.avater {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.editProduct {
+    border: none;
+    border-radius: 10%;
+    padding: 10px 10px;
+    /* background-color: cadetblue; */
+    color: darkseagreen;
+    cursor: pointer;
+    margin-right: 15p;
+}
+
+.deleteProduct {
+    color: firebrick;
+    cursor: pointer;
+}

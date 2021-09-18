@@ -46,6 +46,7 @@ const CreateUser = () => {
                         <option value="yes">yes</option>
                         <option value="no">no</option>
                     </select>
+                    <button className="newUserBtn">Create</button>
                 </div>
             </form>
 

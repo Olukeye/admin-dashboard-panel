@@ -6,6 +6,9 @@ import {BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {Users } from './Pages/usersPage/Users';
 import  EditUser  from './Pages/editusers/EditUser';
 import  CreateUser  from './Pages/newuser/CreateUser';
+import Products  from './Pages/products/Products';
+import EditProducts  from './Pages/products/EditProducts';
+import CreateProducts  from './Pages/products/CreateProducts';
 
 
 function App() {
@@ -21,11 +24,20 @@ function App() {
         <Route path="/users" >
           <Users />
         </Route>
-        <Route path="/user/:userId" >
+        <Route path="/user/:userId" >   
           <EditUser />
         </Route>
         <Route path="/createuser" >
           <CreateUser />
+        </Route>
+        <Route path="/product" >
+          <Products />
+        </Route>
+        <Route path="/product/:productId" >
+          <EditProducts />
+        </Route>
+        <Route path="/newProduct" >
+          <CreateProducts />
         </Route>
       </Switch>
      </div>
