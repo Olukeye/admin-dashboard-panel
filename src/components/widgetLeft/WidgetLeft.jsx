@@ -14,6 +14,7 @@ const WidgetLeft = () => {
         <div className="widgetleft">
         <h4 className="widgetLeftTitle">Transactions</h4>
         <table className="widgetLeftTable">
+        <tbody>
             <tr className="widgetLeftTr">
                 <th className="widgetLeftTh">Customer</th>
                 <th className="widgetLeftTh">Date</th>
@@ -28,7 +29,7 @@ const WidgetLeft = () => {
                 <td className="widgetLeftDate">10-9-2001</td>
                 <td className="widgetLeftAmount">#346,46</td>
                 <td className="widgetLeftStatus">
-                    <Button type="Approved"></Button>
+                    <Button type="Approved" />
                 </td>
             </tr>
             <tr className="widgetLeftTr">
@@ -39,7 +40,7 @@ const WidgetLeft = () => {
                 <td className="widgetLeftDate">Date</td>
                 <td className="widgetLeftAmount">Amount</td>
                 <td className="widgetLeftStatus">
-                    <Button type="pending..."></Button>
+                    <Button type="pending..."/>
                 </td>
             </tr>
             <tr className="widgetLeftTr">
@@ -50,7 +51,7 @@ const WidgetLeft = () => {
                 <td className="widgetLeftDate">Date</td>
                 <td className="widgetLeftAmount">Amount</td>
                 <td className="widgetLeftStatus">
-                    <Button type="Declined"></Button>
+                    <Button type="Declined"/>
                 </td>
             </tr>
             <tr className="widgetLeftTr">
@@ -61,9 +62,10 @@ const WidgetLeft = () => {
                 <td className="widgetLeftDate">Date</td>
                 <td className="widgetLeftAmount">Amount</td>
                 <td className="widgetLeftStatus">
-                    <Button type="Approved"></Button>
+                    <Button type="Approved"/>
                 </td>
             </tr>
+            </tbody>
         </table>
      </div>
     )

@@ -9,7 +9,7 @@ import {
     LineStyle,
     MailOutlined,
     Report,
-    Storefront,
+    PlayCircleOutline ,
     Timeline, TrendingUp, WorkOutline
     } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
@@ -44,9 +44,9 @@ import { Link } from 'react-router-dom'
                         <GroupOutlined  className="sidebarIcon"/> Users
                       </li>
                        </Link>
-                       <Link to="/product"  className="links">
+                       <Link to="/movies"  className="links">
                        <li className="sidebarListItem"> 
-                        <Storefront  className="sidebarIcon"/> Products
+                        <PlayCircleOutline className="sidebarIcon"/> Movies
                         </li>
                        </Link>
                         <li className="sidebarListItem"> 

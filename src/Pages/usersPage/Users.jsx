@@ -8,6 +8,18 @@ import { Link } from 'react-router-dom';
 
 export const Users = () => {
     const [ data, setData ] = useState(userRows);
+    // const [ users, setUsers ] = useState();
+    
+    // useEffect(() => {
+    //    const geUsers = async() => {
+    //        try{
+    //         const res = await axios.get("/")
+    //        } catch (err) {
+    //            console.log(err)
+    //        }
+    //    };
+
+    // }, [])
 
     const handleDelete = (id)=> {
         setData(data.filter(item=> item.id !== id ));
