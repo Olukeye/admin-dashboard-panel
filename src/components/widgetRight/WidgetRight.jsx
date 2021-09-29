@@ -11,7 +11,7 @@ export const WidgetRight = () => {
             try{
                 const res = await axios.get("/user?new=true", {
                     headers : {
-                        token : ""
+                        token: " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMjgyODAxOCwiZXhwIjoxNjMzNDMyODE4fQ.etC7tqly5DhYE5vt-YsdWV4Y3Usl-l-NBNBVgXUpsfI"
                     }
                 });
                 setNewUsers(res.data)

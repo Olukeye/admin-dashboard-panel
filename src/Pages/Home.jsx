@@ -20,7 +20,7 @@ import axios from 'axios'
         try{
           const res = await axios.get("/user/usage", {
             header: {
-              token : ""
+              token: " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMjgzMDU2MCwiZXhwIjoxNjMzNDM1MzYwfQ.wz41rwVQ7UjHsePgHSDZkyo9P4PspRX_vewnYDzRiN0"
             }
           })
           const statsList = res.data.sort(function(a, b) {
