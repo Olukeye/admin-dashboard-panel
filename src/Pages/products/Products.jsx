@@ -1,79 +1,94 @@
-import React, {useState} from 'react'
+import React, {useContext, useEffect} from 'react'
 import { DataGrid } from '@material-ui/data-grid';
-import { DeleteOutline } from '@material-ui/icons'
-import { productRows} from '../../centralData'
-import { Link } from 'react-router-dom';
+import { DeleteOutline } from '@material-ui/icons';
+import { getMovies } from "../../context/movieContext/movieApiCalls";
+import { productRows} from '../../centralData';
+import {MovieContext} from "../../context/movieContext/MovieContext";
+
+import { Link } from 'react-router-dom'; 
 import "./product.css";
 
+ const Products = () => {
+      // const [ data, setData ] = useState(productRows)
+      const { movies,  dispatch} = useContext(MovieContext);
 
-const Product = () => {
-    const [ data, setData ] = useState(productRows)
-
-    const handleDelete = (id)=> {
-        setData(data.filter(item=> item.id !== id ));
-    }
-
-    const colums = [
-        {
-            field: 'id',
-            headerName: 'ID',
-            width: 90
-        },
-        {
-            field: 'product', 
-            headerName: 'Product',
-            width: 200,
-            renderCell: (params) => {
-                return (
-                    <div  className="productList">
-                        <img src={params.row.img} alt="" className="avater" />
-                        {params.row.username}
-                    </div>
-                )
-            }
-        },
-        {
-            field: 'stock', 
-            headerName: 'Stock',
-            width: 200
-        },
-        {
-            field: 'status',
-            headerName: 'Status',
+      useEffect(() => {
+          getMovies(dispatch);
+      }, [dispatch]);
+  
+  
+      const handleDelete = (id)=> {
+          // setData(data.filter(item=> item.id !== id ));
+      }
+  
+  console.log(movies)
+      const colums = [
+          {
+              field: 'id',
+              headerName: 'ID',
+              width: 90
+          },
+          {
+              field: 'movies', 
+              headerName: 'Movie',
+              width: 200,
+              renderCell: (params) => {
+                  return (
+                      <div  className="productList">
+                          <img src={params.row.img} alt="" className="avater" />
+                          {params.row.title}
+                      </div>
+                  )
+              }
+          },
+          {
+              field: 'genre', 
+              headerName: 'Genre',
+              width: 120
+          },
+          {
+              field: 'year',
+              headerName: 'Year',
+              width: 120
+          },
+          {
+              field: 'limit',
+              headerName: 'limit',
+              width: 120
+          },
+          {
+            field: 'isSeries',
+            headerName: 'isSeries',
             width: 120
         },
-        {
-            field: 'price',
-            headerName: 'Price',
-            width: 160
-        },
-        {
-            field: 'action',
-            headerName: 'Action',
-            width: 150,
-            renderCell: (params) => {
-                return (
-                    <>
-                    <Link to={'/product/'+params.row.id}>
-                        <button className="editProduct">Edit</button>
-                        <DeleteOutline className="deleteProduct" onClick={()=> handleDelete(params.row.id)}/>
-                    </Link>
-                    </>
-                )
-            }
-        },
-    ];
-
-    return (
-        <div className="product">
-            <DataGrid rows={data} 
-                disableSelectionOnClick
-                columns={colums} 
-                pageSize={10}
-                checkboxSelection 
-            /> 
-        </div>
-    )
+          {
+              field: 'action',
+              headerName: 'Action',
+              width: 150,
+              renderCell: (params) => {
+                  return (
+                      <>
+                      <Link to={'/product/'+params.row.id}>
+                          <button className="editProduct">Edit</button>
+                      </Link>
+                      <DeleteOutline className="deleteProduct" onClick={()=> handleDelete(params.row.id)}/>
+                      </>
+                  )
+              }
+          },
+      ];
+  
+      return (
+          <div className="product">
+              {/* <DataGrid row={movies} 
+                  disableSelectionOnClick
+                  columns={colums} 
+                  pageSize={10}
+                  checkboxSelection 
+                  rowId ={(row) => row._id}
+              />  */}
+          </div>
+      )
 }
 
-export default Product;
+export default Products;

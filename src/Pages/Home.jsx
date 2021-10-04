@@ -3,7 +3,7 @@ import FeaturedUpdate from '../components/features/FeaturedUpdate';
 import Chart from '../components/ReadChart/Chart';
 import WidgetLeft from '../components/widgetLeft/WidgetLeft';
 import WidgetRight  from '../components/widgetRight/WidgetRight';
-import userData from '../centralData';
+// import userData from '../centralData';
 import './home.css'
 import axios from 'axios'
 
@@ -20,7 +20,8 @@ import axios from 'axios'
         try{
           const res = await axios.get("/user/usage", {
             header: {
-              token: " Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMjgzMDU2MCwiZXhwIjoxNjMzNDM1MzYwfQ.wz41rwVQ7UjHsePgHSDZkyo9P4PspRX_vewnYDzRiN0"
+              // token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken
+              token: " BearereyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxMDQ5M2QwMzU3YmU3MTNlOGRkYmYzYSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzMjk2NTUxNywiZXhwIjoxNjMzNTcwMzE3fQ.iAUfO3YreqrInqvNiZYPEdVyCkviL_zYaKxwZjpsdGk"
             }
           })
           const statsList = res.data.sort(function(a, b) {

@@ -2,25 +2,25 @@ import { createContext, useReducer} from 'react';
 import MovieReducer from './MovieReducer';
 
 const INITIAL_STATE= {
-    movies:[],
-    isFetching: false,
+    movie:[],
+    isFetching: false, 
     error: false,
 };
 
 export  const MovieContext = createContext(INITIAL_STATE);
 
-export const MoviesContextProvider = ({ children }) => {
+export const MovieContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(MovieReducer, INITIAL_STATE);
 
  return (
      <MovieContext.Provider value={{
-         movies: state.movies,
+         movie: state.movie,
          isFetching: state.isFetching,
          error: state.error,
          dispatch
      }}
      >
-         {children}
+       {children}
 </MovieContext.Provider>
  );
 };

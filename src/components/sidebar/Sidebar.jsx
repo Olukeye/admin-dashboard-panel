@@ -44,7 +44,7 @@ import { Link } from 'react-router-dom'
                         <GroupOutlined  className="sidebarIcon"/> Users
                       </li>
                        </Link>
-                       <Link to="/movies"  className="links">
+                       <Link to="/products"  className="links">
                        <li className="sidebarListItem"> 
                         <PlayCircleOutline className="sidebarIcon"/> Movies
                         </li>

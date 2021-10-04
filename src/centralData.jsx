@@ -112,7 +112,7 @@ const userData = [
 export const productRows = [
   {
       id:1,
-      username:'Power bank',
+      name:'Power bank',
       img:"",
       stock: 375,
       status: " active",
@@ -120,7 +120,7 @@ export const productRows = [
   },
   {
       id:2,
-      username:'Power bank',
+      name:'Power bank',
       img:"",
       stock: 456,
       status: " active",
@@ -128,7 +128,7 @@ export const productRows = [
   },
   {
       id:3,
-      username:'Power bank',
+      name:'Power bank',
       img:"",
       stock: 336,
       status: " active",
@@ -136,7 +136,7 @@ export const productRows = [
   },
   {
       id:4,
-      username:'Power bank',
+      name:'Power bank',
       img:"",
       stock: 645,
       status: " active",
@@ -144,7 +144,7 @@ export const productRows = [
   },
   {
       id:5,
-      username:'Power bank',
+      name:'Power bank',
       img:"",
       stock: 456,
       status: " active",

@@ -39,7 +39,7 @@ const  App = () => {
         <Route path="/createuser" >
           <CreateUser />
         </Route>
-        <Route path="/movies" >
+        <Route path="/products" >
           <Products />
         </Route>
         <Route path="/product/:productId" >
