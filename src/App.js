@@ -4,19 +4,20 @@ import Sidebar from './components/sidebar/Sidebar';
 import Home from './Pages/Home';
 import "./app.css";
 import {BrowserRouter as Router, Route, Switch , Redirect} from "react-router-dom";
-import {Users } from './Pages/usersPage/Users';
+import Users  from './Pages/usersPage/Users';
 import  EditUser  from './Pages/editusers/EditUser';
 import  CreateUser  from './Pages/newuser/CreateUser';
 import Products  from './Pages/products/Products';
-import EditProducts  from './Pages/products/EditProducts';
+import ProductList from './Pages/products/ProductList';
+// import EditProducts  from './Pages/products/EditProducts';
 import CreateProducts  from './Pages/products/CreateProducts';
-import {AuthContext} from "./context/authContext/AuthContext"
+import {AuthContext} from "./context/authContext/AuthContext";
 import Login from './Pages/login/Login';
 
 
 const  App = () => {
   const {user} = useContext(AuthContext)
-  return (
+  return ( 
     <Router>
       <Switch>
       <Route path="/login" >
@@ -39,14 +40,14 @@ const  App = () => {
         <Route path="/createuser" >
           <CreateUser />
         </Route>
-        <Route path="/products" >
-          <Products />
+        <Route path="/movie" >
+          <ProductList />
         </Route>
-        <Route path="/product/:productId" >
-          <EditProducts />
+        <Route path="/product/:product" >
+         <Products />
         </Route>
-        <Route path="/newProduct" >
-          <CreateProducts />
+        <Route path="/CreateProduct" >
+          <CreateProducts/>
         </Route>
      </div>
      </>

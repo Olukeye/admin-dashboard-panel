@@ -6,7 +6,7 @@ import { userRows} from '../../centralData'
 import { Link } from 'react-router-dom';
 
 
-export const Users = () => {
+ const Users = () => {
     const [ data, setData ] = useState(userRows);
     // const [ users, setUsers ] = useState();
     
@@ -26,7 +26,7 @@ export const Users = () => {
         console.log('deleted')
     }
 
-    const colums = [
+    const columns = [
         {
             field: 'id',
             headerName: 'ID',
@@ -76,14 +76,12 @@ export const Users = () => {
             }
         },
     ];
-
-    
     return (
         <div className="users">
             <DataGrid rows={data} 
                 disableSelectionOnClick
-                columns={colums} 
-                pageSize={10}
+                columns={columns} 
+                pageSize={8}
                 checkboxSelection 
             /> 
         </div>

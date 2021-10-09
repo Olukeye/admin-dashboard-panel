@@ -44,10 +44,10 @@ import { Link } from 'react-router-dom'
                         <GroupOutlined  className="sidebarIcon"/> Users
                       </li>
                        </Link>
-                       <Link to="/products"  className="links">
-                       <li className="sidebarListItem"> 
-                        <PlayCircleOutline className="sidebarIcon"/> Movies
-                        </li>
+                       <Link to="/movie"  className="links">
+                            <li className="sidebarListItem"> 
+                            <PlayCircleOutline className="sidebarIcon"/> Movies
+                            </li>
                        </Link>
                         <li className="sidebarListItem"> 
                         <AttachMoneyOutlined className="sidebarIcon" /> Transactions

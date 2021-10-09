@@ -1,94 +1,78 @@
-import React, {useContext, useEffect} from 'react'
-import { DataGrid } from '@material-ui/data-grid';
-import { DeleteOutline } from '@material-ui/icons';
-import { getMovies } from "../../context/movieContext/movieApiCalls";
-import { productRows} from '../../centralData';
-import {MovieContext} from "../../context/movieContext/MovieContext";
-
-import { Link } from 'react-router-dom'; 
+import React from 'react'
 import "./product.css";
+import { Link } from 'react-router-dom';
+import Chart from '../../components/ReadChart/Chart';
+import {productData } from "../../centralData";
+import { Publish } from '@material-ui/icons';
 
  const Products = () => {
-      // const [ data, setData ] = useState(productRows)
-      const { movies,  dispatch} = useContext(MovieContext);
-
-      useEffect(() => {
-          getMovies(dispatch);
-      }, [dispatch]);
-  
-  
-      const handleDelete = (id)=> {
-          // setData(data.filter(item=> item.id !== id ));
-      }
-  
-  console.log(movies)
-      const colums = [
-          {
-              field: 'id',
-              headerName: 'ID',
-              width: 90
-          },
-          {
-              field: 'movies', 
-              headerName: 'Movie',
-              width: 200,
-              renderCell: (params) => {
-                  return (
-                      <div  className="productList">
-                          <img src={params.row.img} alt="" className="avater" />
-                          {params.row.title}
-                      </div>
-                  )
-              }
-          },
-          {
-              field: 'genre', 
-              headerName: 'Genre',
-              width: 120
-          },
-          {
-              field: 'year',
-              headerName: 'Year',
-              width: 120
-          },
-          {
-              field: 'limit',
-              headerName: 'limit',
-              width: 120
-          },
-          {
-            field: 'isSeries',
-            headerName: 'isSeries',
-            width: 120
-        },
-          {
-              field: 'action',
-              headerName: 'Action',
-              width: 150,
-              renderCell: (params) => {
-                  return (
-                      <>
-                      <Link to={'/product/'+params.row.id}>
-                          <button className="editProduct">Edit</button>
-                      </Link>
-                      <DeleteOutline className="deleteProduct" onClick={()=> handleDelete(params.row.id)}/>
-                      </>
-                  )
-              }
-          },
-      ];
-  
-      return (
-          <div className="product">
-              {/* <DataGrid row={movies} 
-                  disableSelectionOnClick
-                  columns={colums} 
-                  pageSize={10}
-                  checkboxSelection 
-                  rowId ={(row) => row._id}
-              />  */}
-          </div>
-      )
+    return (
+        <div className="product">
+            <div className="productTitleContainer">
+                <hi className="productTitle">Product</hi>
+                <Link to="/createproduct">
+                    <button className="productAddButton">Create</button>
+                </Link>
+            </div>
+            <div className="productTop">
+                <div className="productTopeLeft">
+                    <Chart data={productData } dataKey="Sales" title="Sale Activies" />
+                </div>
+                <div className="productTopRight">
+                    <div className="productInfoTop">
+                        <img src="" className="productInfoImg" alt="" />
+                        <span className="productName">Power Bank</span>
+                    </div>
+                    <div className="productInfoBottom">
+                        <div className="productInfoItem">
+                            <span className=   "productInfoKey">id:</span>
+                            <span className="productInfoKey">123</span>
+                        </div>
+                        <div className="productInfoItem">
+                            <span className="productInfoKey">Sales</span>
+                            <span className="productInfoValue">$341</span>
+                        </div>
+                        <div className="productInfoItem">
+                            <span className="productInfoKey">Active</span>
+                            <span className="productInfoKey">yes</span>
+                        </div>
+                        <div className="productInfoItem">
+                            <span className="productInfoKey">Stock</span>
+                            <span className="productInfoKey">maybe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="productButton">
+                <form  className="productForm">
+                    <div className="productFormLeft">
+                        <label>Movie Name</label>
+                        <input type="text" placeholder="" />
+                        <label> Stock </label>
+                        <select name="stock" id="StockID">
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                        <label>Active</label>
+                        <select name="active" id="active">
+                            <option value="yes">yes</option>
+                            <option value="no">no</option>
+                        </select>
+                    </div>
+                    <div className="productFormRight">
+                        <div className="productUpload">
+                            <img src="" className="uploadImg" alt="" />
+                            <label for="">
+                                <Publish />
+                            </label>
+                            <input type="file" style={{display:"blue"}} id="file" />
+                        </div>
+                        <button className="productButton">update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
 }
 
 export default Products;
