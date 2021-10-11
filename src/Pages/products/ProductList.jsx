@@ -67,7 +67,7 @@ import "./productlist.css";
             renderCell: (params) => {
                 return (
                     <>
-                    <Link to={'/product/'+ params.row._id}>
+                    <Link to={{pathname:"/product/" + params.row._id, movie: params.row}}>
                         <button className="editProduct">Edit</button>
                     </Link>
                     <DeleteOutline className="deleteProduct" onClick={()=> handleDelete(params.row._id)}/>

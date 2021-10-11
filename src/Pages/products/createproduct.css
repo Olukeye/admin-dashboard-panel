@@ -3,12 +3,15 @@
 }
 .addProductForm {
     margin-top: 10px;
+    flex-wrap: wrap;
+    display: flex;
 }
 .addProductItem {
     width: 250px;
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    padding: 20px;
 }
 .addProductItem > label {
     margin-bottom: 10px;
@@ -31,6 +34,7 @@
     padding: 7px 10px;
     font-weight: 700;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
     cursor: pointer;
+    align-self: flex-end;
 }

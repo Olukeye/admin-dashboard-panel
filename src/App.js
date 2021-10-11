@@ -43,7 +43,7 @@ const  App = () => {
         <Route path="/movie" >
           <ProductList />
         </Route>
-        <Route path="/product/:product" >
+        <Route path="/product/:productId" >
          <Products />
         </Route>
         <Route path="/CreateProduct" >

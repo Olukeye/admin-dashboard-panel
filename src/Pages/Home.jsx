@@ -37,7 +37,6 @@ import axios from 'axios'
       };
       getStatistic();
       }, [MONTHS])
-    console.log(userStatistic)
   
     return (
         <div className="home">
@@ -46,7 +45,7 @@ import axios from 'axios'
                  <WidgetLeft />
              </div>
             <Chart 
-                data={ userStatistic} 
+                data={userData} 
                 title="New User" 
                 grid dataKey="Active User"
              />

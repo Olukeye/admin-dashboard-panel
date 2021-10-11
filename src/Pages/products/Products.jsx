@@ -1,44 +1,42 @@
 import React from 'react'
 import "./product.css";
-import { Link } from 'react-router-dom';
-import Chart from '../../components/ReadChart/Chart';
-import {productData } from "../../centralData";
+import { Link , useLocation } from 'react-router-dom';
 import { Publish } from '@material-ui/icons';
 
  const Products = () => {
+     const location = useLocation();
+     const movie = location.movie;
     return (
         <div className="product">
             <div className="productTitleContainer">
-                <hi className="productTitle">Product</hi>
+                <hi className="productTitle">Movie:</hi>
                 <Link to="/createproduct">
                     <button className="productAddButton">Create</button>
                 </Link>
             </div>
             <div className="productTop">
-                <div className="productTopeLeft">
-                    <Chart data={productData } dataKey="Sales" title="Sale Activies" />
-                </div>
+              
                 <div className="productTopRight">
                     <div className="productInfoTop">
-                        <img src="" className="productInfoImg" alt="" />
-                        <span className="productName">Power Bank</span>
+                        <img src={movie.img}  alt="" className="productInfoImg" />
+                        <span className="productName">{movie.title}</span>
                     </div>
                     <div className="productInfoBottom">
                         <div className="productInfoItem">
-                            <span className=   "productInfoKey">id:</span>
-                            <span className="productInfoKey">123</span>
+                            <span className="productInfoKey">id:</span>
+                            <span className="productInfoKey">{movie._id}</span>
                         </div>
                         <div className="productInfoItem">
-                            <span className="productInfoKey">Sales</span>
-                            <span className="productInfoValue">$341</span>
+                            <span className="productInfoKey">Genre:</span>
+                            <span className="productInfoValue">{movie.genre}</span>
                         </div>
                         <div className="productInfoItem">
-                            <span className="productInfoKey">Active</span>
-                            <span className="productInfoKey">yes</span>
+                            <span className="productInfoKey">year:</span>
+                            <span className="productInfoKey">{movie.year}</span>
                         </div>
                         <div className="productInfoItem">
-                            <span className="productInfoKey">Stock</span>
-                            <span className="productInfoKey">maybe</span>
+                            <span className="productInfoKey">limit</span>
+                            <span className="productInfoKey">{movie.limit}</span>
                         </div>
                     </div>
                 </div>
@@ -46,23 +44,23 @@ import { Publish } from '@material-ui/icons';
             <div className="productButton">
                 <form  className="productForm">
                     <div className="productFormLeft">
-                        <label>Movie Name</label>
-                        <input type="text" placeholder="" />
-                        <label> Stock </label>
-                        <select name="stock" id="StockID">
-                            <option value="yes">yes</option>
-                            <option value="no">no</option>
-                        </select>
-                        <label>Active</label>
-                        <select name="active" id="active">
-                            <option value="yes">yes</option>
-                            <option value="no">no</option>
-                        </select>
+                        <label>Movie Title</label>
+                        <input type="text" placeholder={movie.title} />
+                        <label> Year </label>
+                        <input type="text" placeholder={movie.year} />
+                        <label> Genre </label>
+                        <input type="text" placeholder={movie.genre} />
+                        <label> Limit </label>
+                        <input type="text" placeholder={movie.limit} />
+                        <label> Thriller </label>
+                        <input type="file" style={{cursor:"pointer"}} placeholder={movie.Thriller} />
+                        <label> Video </label>
+                        <input type="file" style={{cursor:"pointer"}} placeholder={movie.video} />
                     </div>
                     <div className="productFormRight">
                         <div className="productUpload">
-                            <img src="" className="uploadImg" alt="" />
-                            <label for="">
+                            <img src={movie.img} className="uploadImg" alt="" />
+                            <label>
                                 <Publish />
                             </label>
                             <input type="file" style={{display:"blue"}} id="file" />
