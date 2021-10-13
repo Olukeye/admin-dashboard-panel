@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import './createproduct.css';
-import { useState } from 'react';
 import storage from '../../firebase';
+import { createMovies } from '../../context/movieContext/movieApiCalls';
+import {MovieContext} from '../../context/movieContext/MovieContext';
 
 const CreateProducts = () => {
     const [ movie , setMovie] = useState(null);
@@ -10,21 +11,26 @@ const CreateProducts = () => {
     const [ imgSm, setImgSm] = useState(null);
     const [ thriller, setThriller] = useState(null);
     const [ video, setVideo] = useState(null);
-    const [ upload, setUpload] = useState(0);
+    const [ uploaded, setUploaded] = useState(0);
 
+    // dispatch context
+    const {dispatch} = useContext(MovieContext);
+
+    
     const handleChange = (e) => {
         const value = e.target.value;
         setMovie({...movie, [e.target.name]: value});
     }
    
-    const uploading = (items) => {
+    const upload = (items) => {
         items.forEach((item) => {
-            const uploadTask = storage.ref(`/items/${item.file.name}`).put(item);
-            uploadTask.on("state_changes", (snapshot) => {
-                const progress = (snapshot.byteTransfered / snapshot.totaBytes) * 100;
-                console.log("loading" + progress + "% done");
+            const fileName = new Date().getTime() + item.label + item.file.name;
+            const uploadTask = storage.ref(`/items/${fileName}`).put(item);
+            uploadTask.on("state_changed", snapshot => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log("loading" + progress + " % done. ");
             },
-            (err) => {
+            (err) => { 
                 console.log(err)
             },
             () => {
@@ -32,26 +38,30 @@ const CreateProducts = () => {
                     setMovie((prev) => {
                         return {...prev, [item.label]: url };
                     });
-                     setUpload((prev) => prev + 1);
+                     setUploaded((prev) => prev + 1);
                 });
               }
             );
         });
     }
 
-// handle all the files properties(input)
-    const handleUpload = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        uploading ([
-            {file: img, label: "img"},
-            {file: imgTitle, label: "imgTitle"},
-            {file: imgSm, label: "imgSm"},
-            {file: thriller, label: "thriller"},
-            {file: video, label: "video"},
-        ])
+        createMovies(movie, dispatch)
+      }
+
+// handle all the files properties(input)
+    function handleUpload(e) {
+        e.preventDefault();
+        upload([
+            { file: img, label: "img" },
+            { file: imgTitle, label: "imgTitle" },
+            { file: imgSm, label: "imgSm" },
+            { file: thriller, label: "thriller" },
+            { file: video, label: "video" },
+        ]);
     }
 
-    console.log(movie)
 
      return (
         <div className="createproduct">
@@ -91,7 +101,7 @@ const CreateProducts = () => {
                 </div>
                 <div className="addProductItem">
                     <label>Limit</label>
-                    <input type="text" onChange={handleChange} onChange={handleChange}   placeholder="limit" />
+                    <input type="text" onChange={handleChange}    placeholder="limit" />
                 </div>
                 <div className="addProductItem">
                     <label>Thriller</label>
@@ -103,12 +113,12 @@ const CreateProducts = () => {
                 </div>
                 <div className="addProductItem">
                     <label>Series?</label>
-                    <select  name="active" onChange={handleChange}  id="active">
+                    <select  name="active" onChange={handleChange} name="isSeries" id="active">
                         <option value="false">no</option>
                         <option value="true">yes</option>
                     </select>
-                    {upload ===5 ? (
-                            <button className="addProductBtn">Create</button>
+                    {uploaded === 5 ? (
+                            <button className="addProductBtn" onClick={handleSubmit}>Create</button>
                         ) : (
                             <button className="addProductBtn" onClick={handleUpload}>Upload</button>
                         )}

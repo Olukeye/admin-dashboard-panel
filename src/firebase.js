@@ -1,7 +1,7 @@
-import firebase from "firebase"
+import firebase from "firebase";
 
 
-firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyDPRGqK7RZZTmjnrDc1nYz9xN7MzoUTCKU",
     authDomain: "movieapp-659f3.firebaseapp.com",
     projectId: "movieapp-659f3",
