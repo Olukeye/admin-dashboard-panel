@@ -9,10 +9,12 @@ import  EditUser  from './Pages/editusers/EditUser';
 import  CreateUser  from './Pages/newuser/CreateUser';
 import Products  from './Pages/products/Products';
 import ProductList from './Pages/products/ProductList';
-// import EditProducts  from './Pages/products/EditProducts';
 import CreateProducts  from './Pages/products/CreateProducts';
+import Lists  from './Pages/movieLists/Lists';
 import {AuthContext} from "./context/authContext/AuthContext";
 import Login from './Pages/login/Login';
+import ListUpdate from './Pages/movieLists/ListUpdate';
+;
 
 
 const  App = () => {
@@ -49,6 +51,15 @@ const  App = () => {
         <Route path="/CreateProduct" >
           <CreateProducts/>
         </Route>
+        <Route path="/lists" >
+          <Lists />
+        </Route>
+        <Route path="/list/:listId" >
+        <ListUpdate />
+        </Route>
+        {/* <Route path="/newList" >
+          <CreateProducts/>
+        </Route> */}
      </div>
      </>
 }

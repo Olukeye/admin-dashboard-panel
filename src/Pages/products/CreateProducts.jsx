@@ -113,7 +113,7 @@ const CreateProducts = () => {
                 </div>
                 <div className="addProductItem">
                     <label>Series?</label>
-                    <select  name="active" onChange={handleChange} name="isSeries" id="isSeries">
+                    <select  onChange={handleChange} name="isSeries" id="isSeries">
                         <option value="false">no</option>
                         <option value="true">yes</option>
                     </select>

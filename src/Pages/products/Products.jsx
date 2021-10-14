@@ -41,7 +41,7 @@ import { Publish } from '@material-ui/icons';
                     </div>
                 </div>
             </div>
-            <div className="productButton">
+            <div className="pb">
                 <form  className="productForm">
                     <div className="productFormLeft">
                         <label>Movie Title</label>

@@ -49,7 +49,7 @@ import { Link } from 'react-router-dom'
                             <PlayCircleOutline className="sidebarIcon"/> Movies
                             </li>
                        </Link>
-                       <Link to="/list"  className="links">
+                       <Link to="/lists"  className="links">
                             <li className="sidebarListItem"> 
                               <Link className="sidebarIcon"/> Lists
                             </li>

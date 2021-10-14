@@ -30,12 +30,12 @@ import { Link } from 'react-router-dom';
         {
             field: 'id',
             headerName: 'ID',
-            width: 90
+            width: 100
         },
         {
             field: 'user', 
             headerName: 'User',
-            width: 200,
+            width: 250,
             renderCell: (params) => {
                 return (
                     <div  className="usersList">
@@ -48,22 +48,22 @@ import { Link } from 'react-router-dom';
         {
             field: 'email', 
             headerName: 'Email',
-            width: 200
+            width: 250
         },
         {
             field: 'status',
             headerName: 'status',
-            width: 120
+            width: 250
         },
         {
             field: 'transaction',
             headerName: 'Transaction Volume',
-            width: 160
+            width: 250
         },
         {
             field: 'action',
             headerName: 'Action',
-            width: 150,
+            width: 250,
             renderCell: (params) => {
                 return (
                     <>

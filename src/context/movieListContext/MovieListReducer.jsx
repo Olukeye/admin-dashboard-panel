@@ -1,20 +1,20 @@
 const ListReducer = (state, action) => {
     switch (action.type) {
-        case "GET_START_LIST":
+        case "GET_LIST_START":
             return {
-               List: [],
+              lists: [],
                 isFetching: true,
                 error: false,
             };
             case "GET_LIST_SUCCESS":
             return {
-               List: action.payload,
+              lists: action.payload,
                 isFetching: false,
                 error: false,
             };
             case "GET_LIST_FAILED":
             return {
-               List: [],
+              lists: [],
                 isFetching: false,
                 error: true,
             };
@@ -58,25 +58,26 @@ const ListReducer = (state, action) => {
             //         isFetching: false,
             //         error: true,
             //     };
+
             // // Delete
-            // case "DELETE_START_MOVIES":
-            // return {
-            //    ...state,
-            //     isFetching: true,
-            //     error: false,
-            // };
-            // case "DELETE_MOVIES_SUCCESS":
-            // return {
-            //    movie: state.movie.filter((movie) => movie._id !== action.payload),
-            //     isFetching: false,
-            //     error: false,
-            // };
-            // case "DELETE_MOVIES_FAILED":
-            // return {
-            //    ...state,
-            //     isFetching: false,
-            //     error: true,
-            // };
+            case "DELETE_LIST_START":
+            return {
+               ...state,
+                isFetching: true,
+                error: false,
+            };
+            case "DELETE_LIST_SUCCESS":
+            return {
+               lists: state.lists.filter((list) => list._id !== action.payload),
+                isFetching: false,
+                error: false,
+            };
+            case "DELETE_LIST_FAILED":
+            return {
+               ...state,
+                isFetching: false,
+                error: true,
+            };
             default :
             return {...state}
     }

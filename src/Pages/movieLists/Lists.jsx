@@ -1,69 +1,49 @@
 import React, {useContext, useEffect} from 'react'
 import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from '@material-ui/icons';
-import {MovieContext} from "../../context/movieContext/MovieContext";
-import { getMovies ,deleteMovies } from "../../context/movieContext/movieApiCalls";
+import {MovieListContext} from "../../context/movieListContext/MovieListContext";
+import { deleteList, getList } from "../../context/movieListContext/MovieListApiCalls";
 import { Link } from 'react-router-dom'; 
 import "./list.css";
 
 
  const List = () => {
     //    const [ data, setData ] = useState(listRows)
-    const { movie, dispatch } = useContext(MovieContext);
+    const { lists, dispatch } = useContext(MovieListContext);
 
     useEffect(() => {
-        getMovies(dispatch);
+        getList(dispatch);
     }, [dispatch]);
-    
- 
-    const handleDelete = (id)=> {
-        deleteMovies(id, dispatch);
-    }
-    console.log(movie);
 
+    const handleDelete = (id) => {
+        deleteList(id, dispatch);
+    }
+    
     const column = [
         {
             field: '_id',
             headerName: 'ID',
-            width: 90
+            width: 250
         },
         {
-            field: 'movies', 
-            headerName: 'Movie',
-            width: 200,
-            renderCell: (params) => {
-                return (
-                    <div  className="ListImg">
-                        <img src={params.row.img} alt="" className="avater" />
-                        {params.row.title}
-                    </div>
-                )
-            }
+            field: 'title', 
+            headerName: 'title',
+            width: 250
         },
         {
-            field: 'genre', 
+            field: 'genre',
             headerName: 'Genre',
-            width: 120
+            width: 250
         },
         {
-            field: 'year',
-            headerName: 'Year',
-            width: 120
+            field: 'type',
+            headerName: 'type',
+            width: 250
         },
-        {
-            field: 'limit',
-            headerName: 'limit',
-            width: 120
-        },
-        {
-          field: 'isSeries',
-          headerName: 'isSeries',
-          width: 120
-      },
         {
             field: 'action',
             headerName: 'Action',
-            width: 150,
+            width: 250,
             renderCell: (params) => {
                 return (
                     <>
@@ -78,7 +58,7 @@ import "./list.css";
     ];
     return (
           <div className="list">
-            <DataGrid rows={movie} 
+            <DataGrid rows={lists} 
                 disableSelectionOnClick
                 columns={column} 
                 pageSize={10}

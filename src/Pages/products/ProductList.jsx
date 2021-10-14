@@ -25,7 +25,7 @@ import "./productlist.css";
         {
             field: '_id',
             headerName: 'ID',
-            width: 90
+            width: 200
         },
         {
             field: 'movies', 
@@ -43,22 +43,22 @@ import "./productlist.css";
         {
             field: 'genre', 
             headerName: 'Genre',
-            width: 120
+            width: 200
         },
         {
             field: 'year',
             headerName: 'Year',
-            width: 120
+            width: 200
         },
         {
             field: 'limit',
             headerName: 'limit',
-            width: 120
+            width: 200
         },
         {
           field: 'isSeries',
           headerName: 'isSeries',
-          width: 120
+          width: 200
       },
         {
             field: 'action',
