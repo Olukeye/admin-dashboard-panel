@@ -19,16 +19,16 @@ const CreateProducts = () => {
     
     const handleChange = (e) => {
         const value = e.target.value;
-        setMovie({...movie, [e.target.name]: value});
+        setMovie({ ...movie, [e.target.name]: value});
     }
    
     const upload = (items) => {
         items.forEach((item) => {
             const fileName = new Date().getTime() + item.label + item.file.name;
-            const uploadTask = storage.ref(`/items/${fileName}`).put(item);
-            uploadTask.on("state_changed", snapshot => {
-                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log("loading" + progress + " % done. ");
+            const uploadTask = storage.ref(`/items/${fileName}`).put(item.file);
+            uploadTask.on("state_changed", (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 10;
+                console.log("upload is " + progress + "% done.");
             },
             (err) => { 
                 console.log(err)
@@ -36,7 +36,7 @@ const CreateProducts = () => {
             () => {
                 uploadTask.snapshot.ref.getDownloadURL().then((url) => {
                     setMovie((prev) => {
-                        return {...prev, [item.label]: url };
+                        return { ...prev, [item.label]: url };
                     });
                      setUploaded((prev) => prev + 1);
                 });
@@ -45,13 +45,8 @@ const CreateProducts = () => {
         });
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        createMovies(movie, dispatch)
-      }
-
 // handle all the files properties(input)
-    function handleUpload(e) {
+    const  handleUpload = (e) => {
         e.preventDefault();
         upload([
             { file: img, label: "img" },
@@ -62,6 +57,11 @@ const CreateProducts = () => {
         ]);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        createMovies(movie, dispatch)
+      }
+
 
      return (
         <div className="createproduct">
@@ -69,7 +69,7 @@ const CreateProducts = () => {
             <form className="addProductForm">
                 <div className="addProductItem">
                     <label>image</label>
-                    <input type ="file" style={{cursor: "pointer"}} onChange={e=>setImg(e.target.files[0])} id="image" name="img"/>
+                    <input type ="file" style={{cursor: "pointer"}} onChange={e=>setImg(e.target.files[0])} id="img" name="img"/>
                 </div>
                 <div className="addProductItem">
                     <label>Title</label>
@@ -77,7 +77,7 @@ const CreateProducts = () => {
                 </div>
                 <div className="addProductItem">
                     <label>Thumbnail image</label>
-                    <input type ="file" style={{cursor: "pointer"}} onChange={e=>setImgSm(e.target.files[0])}  id="thumbImg" name="imgSm" />
+                    <input type ="file" style={{cursor: "pointer"}} onChange={e=>setImgSm(e.target.files[0])}  id="imgSm" name="imgSm" />
                 </div>
                 <div className="addProductItem">
                     <label>Title</label>
@@ -113,7 +113,7 @@ const CreateProducts = () => {
                 </div>
                 <div className="addProductItem">
                     <label>Series?</label>
-                    <select  name="active" onChange={handleChange} name="isSeries" id="active">
+                    <select  name="active" onChange={handleChange} name="isSeries" id="isSeries">
                         <option value="false">no</option>
                         <option value="true">yes</option>
                     </select>

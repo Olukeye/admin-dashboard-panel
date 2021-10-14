@@ -49,6 +49,11 @@ import { Link } from 'react-router-dom'
                             <PlayCircleOutline className="sidebarIcon"/> Movies
                             </li>
                        </Link>
+                       <Link to="/list"  className="links">
+                            <li className="sidebarListItem"> 
+                              <Link className="sidebarIcon"/> Lists
+                            </li>
+                       </Link>
                         <li className="sidebarListItem"> 
                         <AttachMoneyOutlined className="sidebarIcon" /> Transactions
                         </li>

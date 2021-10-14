@@ -1,3 +1,4 @@
+    // Get all movies 
     export const getMoviesStart = () => ({
         type: "GET_MOVIES_START",
     });
@@ -23,6 +24,20 @@
 
     export const createMovieFailed = () => ({
         type: "CREATE_MOVIE_FAILED",
+    });
+
+    // Update movie
+    export const updateMovieStart = () => ({
+        type: "UPDATEE_MOVIE_START",
+    });
+
+    export const updateMovieSuccess = (movie) => ({
+        type: "UPDATEE_MOVIE_SUCCESS",
+        payload: movie,
+    });
+
+    export const updateMovieFailed = () => ({
+        type: "UPDATEE_MOVIE_FAILED",
     });
 
     // Delete movies hook
