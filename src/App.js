@@ -11,9 +11,11 @@ import Products  from './Pages/products/Products';
 import ProductList from './Pages/products/ProductList';
 import CreateProducts  from './Pages/products/CreateProducts';
 import Lists  from './Pages/movieLists/Lists';
+import NewList  from './Pages/movieLists/NewList';
+import ListUpdate from './Pages/movieLists/ListUpdate';
 import {AuthContext} from "./context/authContext/AuthContext";
 import Login from './Pages/login/Login';
-import ListUpdate from './Pages/movieLists/ListUpdate';
+
 ;
 
 
@@ -51,15 +53,15 @@ const  App = () => {
         <Route path="/CreateProduct" >
           <CreateProducts/>
         </Route>
-        <Route path="/lists" >
+        <Route path="/list" >
           <Lists />
         </Route>
         <Route path="/list/:listId" >
         <ListUpdate />
         </Route>
-        {/* <Route path="/newList" >
-          <CreateProducts/>
-        </Route> */}
+        <Route path="/newlist" >
+          <NewList/>
+        </Route>
      </div>
      </>
 }

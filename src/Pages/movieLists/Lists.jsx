@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import "./list.css";
 
 
- const List = () => {
+ const Lists = () => {
     //    const [ data, setData ] = useState(listRows)
     const { lists, dispatch } = useContext(MovieListContext);
 
@@ -43,11 +43,11 @@ import "./list.css";
         {
             field: 'action',
             headerName: 'Action',
-            width: 250,
+            width: 120,
             renderCell: (params) => {
                 return (
                     <>
-                    <Link to={{pathname:"/list/" + params.row._id, movie: params.row}}>
+                    <Link to={{pathname:"/list/" + params.row._id, list: params.row}}>
                         <button className="editlist">Edit</button>
                     </Link>
                     <DeleteOutline className="deletelist" onClick={()=> handleDelete(params.row._id)}/>
@@ -69,6 +69,6 @@ import "./list.css";
     )
 }
 
-export default List;
+export default Lists;
 
 

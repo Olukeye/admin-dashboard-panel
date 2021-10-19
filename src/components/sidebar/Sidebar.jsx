@@ -14,8 +14,6 @@ import {
     } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 
-
-
  const Sidebar = () => {
     return (
         <div className="sidebar">
@@ -49,9 +47,9 @@ import { Link } from 'react-router-dom'
                             <PlayCircleOutline className="sidebarIcon"/> Movies
                             </li>
                        </Link>
-                       <Link to="/lists"  className="links">
+                       <Link to="/list"  className="links">
                             <li className="sidebarListItem"> 
-                              <Link className="sidebarIcon"/> Lists
+                              <LineStyle className="sidebarIcon"/> Lists
                             </li>
                        </Link>
                         <li className="sidebarListItem"> 

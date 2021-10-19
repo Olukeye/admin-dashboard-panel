@@ -12,33 +12,33 @@
         type: "GET_LIST_FAILED",
     });
 
-    // // create movie
-    // export const createListtart = () => ({
-    //     type: "CREATE_MOVIE_START",
-    // });
+    // // create ListofMovie
+    export const createListStart = () => ({
+        type: "CREATE_MOVIE_START",
+    });
 
-    // export const createListuccess = (movie) => ({
-    //     type: "CREATE_MOVIE_SUCCESS",
-    //     payload: movie,
-    // });
+    export const createListSuccess = (list) => ({
+        type: "CREATE_MOVIE_SUCCESS",
+        payload: list,
+    });
 
-    // export const createMovieFailed = () => ({
-    //     type: "CREATE_MOVIE_FAILED",
-    // });
+    export const createListFailed = () => ({
+        type: "CREATE_MOVIE_FAILED",
+    });
 
     // // Update movie
-    // export const updateListtart = () => ({
-    //     type: "UPDATEE_MOVIE_START",
-    // });
+    export const updateListStart = () => ({
+        type: "UPDATEE_MOVIE_START",
+    });
 
-    // export const updateListuccess = (movie) => ({
-    //     type: "UPDATEE_MOVIE_SUCCESS",
-    //     payload: movie,
-    // });
+    export const updateListSuccess = (list) => ({
+        type: "UPDATEE_MOVIE_SUCCESS",
+        payload: list,
+    });
 
-    // export const updateMovieFailed = () => ({
-    //     type: "UPDATEE_MOVIE_FAILED",
-    // });
+    export const updateListFailed = () => ({
+        type: "UPDATEE_MOVIE_FAILED",
+    });
 
     // Delete List hook
     export const deleteListStart = () => ({
